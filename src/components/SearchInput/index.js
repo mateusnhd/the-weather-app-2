@@ -1,6 +1,5 @@
 import { Input, Search, Icon } from './styles';
 import { CiSearch } from 'react-icons/ci';
-import { AiOutlineLoading } from 'react-icons/ai'; // Importando o ícone de loading
 
 export const SearchInput = ({ fn, setValue, value }) => {
   const handleSearch = async () => {

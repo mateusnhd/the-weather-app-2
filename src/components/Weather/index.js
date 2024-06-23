@@ -1,11 +1,10 @@
 import { WeatherTop } from "../WeatherTop";
 import { WeatherBottom } from "../WeatherBottom";
-import { Container } from "./styles";
+import { Container, Title } from "./styles";
+import { Forecast } from "components/Forecast";
 
-export const Weather = ({ data }) => {
-  if (!data) return null;
-
-  const { name, main, weather, wind } = data;
+export const Weather = ({ weatherData, forecast, setForecast }) => {
+  const { name, main, weather, wind } = weatherData;
 
   return (
     <Container>
@@ -19,6 +18,8 @@ export const Weather = ({ data }) => {
         humidity={main?.humidity} 
         windSpeed={wind?.speed} 
       />
+      <Title>Previsão para hoje</Title>
+      <Forecast weather={weatherData} forecast={forecast} setForecast={setForecast} />
     </Container>
   )
 }

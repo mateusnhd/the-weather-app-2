@@ -10,12 +10,12 @@ const debounce = (func, delay) => {
   };
 };
 
-export const useSearch = (setData) => {
+export const useSearch = (setWeather, setForecast) => {
   const { getWeather } = useApi();
 
-  const findLocationByValue = (value) => {
+  const findLocationByValue = async (value) => {
     getWeather(value).then((res) => {
-      setData(res);
+      setWeather(res);
     });
   };
 
