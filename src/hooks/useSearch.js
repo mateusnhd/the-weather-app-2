@@ -19,7 +19,7 @@ export const useSearch = (setData) => {
     });
   };
 
-  const debouncedSearchLocation = debounce(findLocationByValue, 1000);
+  const debouncedSearchLocation = debounce(findLocationByValue, 500);
 
   const searchLocation = (value) => {
     debouncedSearchLocation(value);
